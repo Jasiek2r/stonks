@@ -1,3 +1,5 @@
+using StonksAPI.Services;
+
 namespace StonksAPI
 {
     public class Program
@@ -14,6 +16,14 @@ namespace StonksAPI
 
 
             // Add services
+            builder.Services.AddHttpClient();
+            builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+
+            // DI container
+            builder.Services.AddScoped<IStonksApiService, StonksApiService>();
+            
+
             builder.Services.AddControllers();
 
             //Build an app
