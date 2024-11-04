@@ -1,0 +1,6 @@
+@StonksAPI_HostAddress = http://localhost:5125
+
+GET {{StonksAPI_HostAddress}}/api/get-asset/TSLA
+Accept: application/json
+
+###
