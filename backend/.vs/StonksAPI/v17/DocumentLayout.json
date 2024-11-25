@@ -3,8 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\dto\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\dto\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\entities\\holding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\entities\\holding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\entities\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\entities\\userdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\validators\\registeruserdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\validators\\registeruserdtovalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\utility\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\utility\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\utility\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\utility\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\utility\\mapintervalroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\utility\\mapintervalroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\services\\accountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -19,14 +47,6 @@
       "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\stonksapi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Migrations\\20241125161011_userdb-1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:StonksAPI\\Migrations\\20241125161011_userdb-1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\entities\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\services\\iaccountservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -35,28 +55,8 @@
       "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\dto\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\dto\\registeruserdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\controllers\\stonksapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\controllers\\stonksapicontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\entities\\holding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\entities\\holding.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\utility\\mapintervalroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\utility\\mapintervalroute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\utility\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\utility\\quote.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\utility\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\utility\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\authenticationsettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -65,6 +65,10 @@
     {
       "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|c:\\users\\janek\\documents\\github\\stonks\\backend\\stonksapi\\migrations\\20241125161011_userdb-1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F4C4DF80-2F4C-4412-A13D-CF57A5AB00EE}|StonksAPI\\StonksAPI.csproj|solutionrelative:stonksapi\\migrations\\20241125161011_userdb-1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -74,7 +78,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -87,45 +91,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "20241125161011_userdb-1.cs",
-              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
-              "RelativeDocumentMoniker": "StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
-              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
-              "RelativeToolTip": "StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "RegisterUserDtoValidator.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Validators\\RegisterUserDtoValidator.cs",
+              "RelativeDocumentMoniker": "StonksAPI\\Validators\\RegisterUserDtoValidator.cs",
+              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Validators\\RegisterUserDtoValidator.cs",
+              "RelativeToolTip": "StonksAPI\\Validators\\RegisterUserDtoValidator.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-25T16:10:12.141Z",
+              "WhenOpened": "2024-11-25T16:29:21.113Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StonksAPI.http",
-              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\StonksAPI.http",
-              "RelativeDocumentMoniker": "StonksAPI\\StonksAPI.http",
-              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\StonksAPI.http",
-              "RelativeToolTip": "StonksAPI\\StonksAPI.http",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2024-11-25T15:57:33.747Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "RegisterUserDto.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\DTO\\RegisterUserDto.cs",
               "RelativeDocumentMoniker": "StonksAPI\\DTO\\RegisterUserDto.cs",
               "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\DTO\\RegisterUserDto.cs",
               "RelativeToolTip": "StonksAPI\\DTO\\RegisterUserDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAASAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-25T15:53:27.972Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 5,
               "Title": "Quote.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Utility\\Quote.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Utility\\Quote.cs",
@@ -138,7 +129,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 7,
               "Title": "MapIntervalRoute.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Utility\\MapIntervalRoute.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Utility\\MapIntervalRoute.cs",
@@ -151,7 +142,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 6,
               "Title": "ApiResponse.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Utility\\ApiResponse.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Utility\\ApiResponse.cs",
@@ -164,7 +155,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 11,
               "Title": "IAccountService.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Services\\IAccountService.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Services\\IAccountService.cs",
@@ -177,7 +168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "AccountService.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Services\\AccountService.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Services\\AccountService.cs",
@@ -198,7 +189,8 @@
               "RelativeToolTip": "StonksAPI\\AuthenticationSettings.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAFAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T13:49:52.811Z"
+              "WhenOpened": "2024-11-04T13:49:52.811Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -210,11 +202,12 @@
               "RelativeToolTip": "StonksAPI\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-04T13:46:34.187Z"
+              "WhenOpened": "2024-11-04T13:46:34.187Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Program.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Program.cs",
@@ -227,33 +220,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 12,
               "Title": "AccountController.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Controllers\\AccountController.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Controllers\\AccountController.cs",
               "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Controllers\\AccountController.cs",
               "RelativeToolTip": "StonksAPI\\Controllers\\AccountController.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAABUAAAAMAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBJwBUAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T13:41:33.74Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UserDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Entities\\UserDbContext.cs",
-              "RelativeDocumentMoniker": "StonksAPI\\Entities\\UserDbContext.cs",
-              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Entities\\UserDbContext.cs",
-              "RelativeToolTip": "StonksAPI\\Entities\\UserDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T13:11:10.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 1,
               "Title": "Holding.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Entities\\Holding.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Entities\\Holding.cs",
@@ -266,7 +246,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 3,
+              "Title": "UserDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Entities\\UserDbContext.cs",
+              "RelativeDocumentMoniker": "StonksAPI\\Entities\\UserDbContext.cs",
+              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Entities\\UserDbContext.cs",
+              "RelativeToolTip": "StonksAPI\\Entities\\UserDbContext.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwBsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T13:11:10.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Entities\\User.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Entities\\User.cs",
@@ -279,13 +272,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
+              "Title": "StonksAPI.http",
+              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\StonksAPI.http",
+              "RelativeDocumentMoniker": "StonksAPI\\StonksAPI.http",
+              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\StonksAPI.http",
+              "RelativeToolTip": "StonksAPI\\StonksAPI.http",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2024-11-25T15:57:33.747Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20241125161011_userdb-1.cs",
+              "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
+              "RelativeDocumentMoniker": "StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
+              "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
+              "RelativeToolTip": "StonksAPI\\Migrations\\20241125161011_userdb-1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T16:10:12.141Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
               "Title": "StonksApiController.cs",
               "DocumentMoniker": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Controllers\\StonksApiController.cs",
               "RelativeDocumentMoniker": "StonksAPI\\Controllers\\StonksApiController.cs",
               "ToolTip": "C:\\Users\\janek\\Documents\\GitHub\\stonks\\backend\\StonksAPI\\Controllers\\StonksApiController.cs",
               "RelativeToolTip": "StonksAPI\\Controllers\\StonksApiController.cs",
-              "ViewState": "AQIAABUAAAAAAAAAAAAAACYAAAA8AAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAIBJwCYAAAA8AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T13:05:35.225Z",
               "EditorCaption": ""
