@@ -1,7 +1,11 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
+using StonksAPI.DTO;
 using StonksAPI.Entities;
 using StonksAPI.Services;
+using StonksAPI.Validators;
 using System.Text;
 
 namespace StonksAPI
@@ -48,10 +52,11 @@ namespace StonksAPI
             builder.Services.AddScoped<IStonksApiService, StonksApiService>();
             builder.Services.AddScoped<IAccountService, AccountService>();
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
             builder.Services.AddSingleton<UserDbContext>();
             
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddFluentValidation();
 
             //Build an app
             var app = builder.Build();

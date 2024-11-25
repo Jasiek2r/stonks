@@ -13,8 +13,10 @@ Accept: application/json
 POST {{StonksAPI_HostAddress}}/auth/register
 Content-Type: application/json
 {
+    "Email": "jasiek2r@gmail.com",
     "Username": "test",
-    "Password": "Odell@2024#"
+    "Password": "Odell@2024#",
+    "ConfirmPassword":"Odell@2024#"
 }
 
 ### 2. Registers an user account in the database

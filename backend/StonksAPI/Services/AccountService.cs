@@ -22,6 +22,7 @@ namespace StonksAPI.Services
             //create new user
             User newUser = new User
             {
+                Email = registerUserDto.Email,
                 Username = registerUserDto.Username
             };
 

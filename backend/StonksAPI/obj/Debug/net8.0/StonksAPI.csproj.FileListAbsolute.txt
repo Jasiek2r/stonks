@@ -194,3 +194,7 @@ C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\obj\Debug\net8.0\Stonks
 C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\obj\Debug\net8.0\StonksAPI.genruntimeconfig.cache
 C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\obj\Debug\net8.0\ref\StonksAPI.dll
 C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\bin\Debug\net8.0\FluentValidation.dll
+C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\bin\Debug\net8.0\FluentValidation.AspNetCore.dll
+C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\bin\Debug\net8.0\FluentValidation.DependencyInjectionExtensions.dll
+C:\Users\janek\Documents\GitHub\stonks\backend\StonksAPI\obj\Debug\net8.0\StonksAPI.MvcApplicationPartsAssemblyInfo.cs
