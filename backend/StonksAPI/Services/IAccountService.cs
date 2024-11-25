@@ -6,5 +6,6 @@ namespace StonksAPI.Services
     {
         public void RegisterUser(RegisterUserDto registerUserDto);
         public void Login();
+        string GenerateJwt(LoginDto dto);
     }
 }

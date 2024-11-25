@@ -54,6 +54,7 @@ namespace StonksAPI
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
             builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
             builder.Services.AddSingleton<UserDbContext>();
+            builder.Services.AddSingleton(authenticationSettings);
             
 
             builder.Services.AddControllers().AddFluentValidation();
