@@ -1,6 +1,20 @@
 @StonksAPI_HostAddress = http://localhost:5125
 
-GET {{StonksAPI_HostAddress}}/api/get-asset/TSLA
-Accept: application/json
 
-###
+// A file for testing and documentation of backend API endpoints
+// To try out, run visual studio project and then click "Send request"
+
+
+GET {{StonksAPI_HostAddress}}/api/get-asset/TSLA?interval=daily
+Accept: application/json
+### 1. Fetches stock prices by ticker and interval 
+
+
+POST {{StonksAPI_HostAddress}}/auth/register
+Content-Type: application/json
+{
+    "Username": "test",
+    "Password": "Odell@2024#"
+}
+
+### 2. Registers an user account in the database

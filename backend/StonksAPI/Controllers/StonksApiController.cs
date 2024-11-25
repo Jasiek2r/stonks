@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using StonksAPI.DTO;
 using StonksAPI.Services;
 using System.Net;
@@ -31,6 +32,12 @@ namespace StonksAPI.Controllers
             _stonksApiService = stonksApiService;
         }
 
+        [HttpGet]
+        public IActionResult WelcomeToApi()
+        {
+            // Return a greeting message on the main page
+            return Ok("Welcome to Stock Market API 2024/2025");
+        }
         
         [HttpGet("get-asset/{ticker}")] // get-asset/{asset_ticker_name}?interval={interval}
         public async Task<IActionResult> GetAssetData([FromRoute] string ticker, [FromQuery] string interval)
