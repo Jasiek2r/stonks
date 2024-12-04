@@ -1,4 +1,12 @@
+using FluentValidation;
+using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.IdentityModel.Tokens;
+using StonksAPI.DTO;
+using StonksAPI.Entities;
 using StonksAPI.Services;
+using StonksAPI.Validators;
+using System.Text;
 
 namespace StonksAPI
 {
@@ -14,17 +22,42 @@ namespace StonksAPI
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            var authenticationSettings = new AuthenticationSettings();
+
+            //fill up authenticationSettings object with settings from appsettings.json
+            builder.Configuration.GetSection("Authentication").Bind(authenticationSettings);
+
 
             // Add services
             builder.Services.AddHttpClient();
             builder.Services.AddAutoMapper(typeof(MappingProfile));
+            builder.Services.AddAuthentication(option =>
+            {
+                option.DefaultAuthenticateScheme = "Bearer";
+                option.DefaultScheme = "Bearer";
+                option.DefaultChallengeScheme = "Bearer";
+            }).AddJwtBearer(config => {
+                config.RequireHttpsMetadata = false;
+                config.SaveToken = true;
+                config.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
+                {
+                    ValidIssuer = authenticationSettings.JwtIssuer,
+                    ValidAudience = authenticationSettings.JwtIssuer,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.JwtKey))
+                };
+            });
 
 
             // DI container
             builder.Services.AddScoped<IStonksApiService, StonksApiService>();
+            builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
+            builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
+            builder.Services.AddSingleton<UserDbContext>();
+            builder.Services.AddSingleton(authenticationSettings);
             
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddFluentValidation();
 
             //Build an app
             var app = builder.Build();
@@ -33,7 +66,9 @@ namespace StonksAPI
 
             app.UseHttpsRedirection();
 
-            app.UseAuthorization(); // We will be using authorization later
+            app.UseAuthentication();
+
+            app.UseAuthorization(); 
 
             app.MapControllers();
 
