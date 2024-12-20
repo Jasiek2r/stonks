@@ -34,7 +34,7 @@ namespace StonksAPI.Services
 
             // fetch data from an external stock market API source
             string apiKey = _configuration["ApiSettings:ApiKey"]!;
-            var url = $"https://www.alphavantage.co/query?function={intervalRoute}&symbol=IBM&apikey={apiKey}";
+            var url = $"https://www.alphavantage.co/query?function={intervalRoute}&symbol={ticker}&apikey={apiKey}";
             var response = await _httpClient.GetAsync(url);
             response.EnsureSuccessStatusCode();
             

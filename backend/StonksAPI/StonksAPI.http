@@ -5,7 +5,7 @@
 // To try out, run visual studio project and then click "Send request"
 
 
-GET {{StonksAPI_HostAddress}}/api/get-asset/TSLA?interval=daily
+GET {{StonksAPI_HostAddress}}/api/asset/IBM?interval=daily
 Accept: application/json
 ### 1. Fetches stock prices by ticker and interval 
 
