@@ -42,10 +42,14 @@ namespace StonksAPI.Services
             var jsonString = await response.Content.ReadAsStringAsync();
 
             //deserialize object
-            ApiResponse jsonObject = JsonConvert.DeserializeObject<ApiResponse>(jsonString);
+            ApiResponse jsonResponse = JsonConvert.DeserializeObject<ApiResponse>(jsonString);
+           
+            //convert to uniform internal format
+            ApiResponseAdapter apiResponseAdapter = new ApiResponseAdapter(jsonResponse);
+            ApiSeries jsonSeries = apiResponseAdapter.extractSeries();
             
             //map to Quotations object            
-            Quotations quotations = _autoMapper.Map<Quotations>(jsonObject);
+            Quotations quotations = _autoMapper.Map<Quotations>(jsonSeries);
 
             //return Quotations to the controller
             return quotations;
