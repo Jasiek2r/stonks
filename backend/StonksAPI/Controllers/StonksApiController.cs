@@ -22,7 +22,7 @@ namespace StonksAPI.Controllers
      * already quite long comment.
      */
     [ApiController]
-    [Route("api")]
+    [Route("api/asset")]
     public class StonksApiController : Controller
     {
         private readonly IStonksApiService _stonksApiService;
@@ -33,13 +33,13 @@ namespace StonksAPI.Controllers
         }
 
         [HttpGet]
-        public IActionResult WelcomeToApi()
+        public ActionResult WelcomeToApi()
         {
             // Return a greeting message on the main page
             return Ok("Welcome to Stock Market API 2024/2025");
         }
         
-        [HttpGet("asset/{ticker}")] // asset/{asset_ticker_name}?interval={interval}
+        [HttpGet("{ticker}")] // asset/{asset_ticker_name}?interval={interval}
         public async Task<IActionResult> GetAssetData([FromRoute] string ticker, [FromQuery] string interval)
         {
             // If interval is not present in a request, return a 400 BadRequest status code
@@ -50,6 +50,21 @@ namespace StonksAPI.Controllers
 
             // Otherwise obtain asset data from third-party API and return it to the user
             Quotations quotations = await _stonksApiService.GetAssetData(ticker, interval);
+
+            // Return a 200 OK Status Code to the user along with quotations in JSON format
+            return Ok(quotations);
+        }
+        [HttpGet("{ticker}/intraday")]
+        public async Task<IActionResult> GetIntradayAssetData([FromRoute] string ticker, [FromQuery] string interval)
+        {
+            // If interval is not present in a request, return a 400 BadRequest status code
+            if (string.IsNullOrEmpty(interval))
+            {
+                return BadRequest("Specifying an interval is obligatory!");
+            }
+
+            // Otherwise obtain asset data from third-party API and return it to the user
+            Quotations quotations = await _stonksApiService.GetIntradayAssetData(ticker, interval);
 
             // Return a 200 OK Status Code to the user along with quotations in JSON format
             return Ok(quotations);

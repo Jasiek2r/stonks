@@ -20,10 +20,7 @@ namespace StonksAPI.Services
             _passwordHasher = passwordHasher;
             _authenticationSettings = authenticationSettings;
         }
-        public void Login()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public void RegisterUser(RegisterUserDto registerUserDto)
         {

@@ -51,6 +51,7 @@ namespace StonksAPI
             // DI container
             builder.Services.AddScoped<IStonksApiService, StonksApiService>();
             builder.Services.AddScoped<IAccountService, AccountService>();
+            builder.Services.AddScoped<IHoldingsService, HoldingsService>();
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
             builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
             builder.Services.AddSingleton<UserDbContext>();

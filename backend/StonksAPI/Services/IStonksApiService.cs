@@ -9,5 +9,6 @@ namespace StonksAPI.Services
     public interface IStonksApiService
     {
         public async Task<Quotations> GetAssetData(string ticker, string interval) { return null; }
+        public async Task<Quotations> GetIntradayAssetData(string ticker, string interval) { return null; }
     }
 }

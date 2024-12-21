@@ -2,6 +2,7 @@
 {
     using AutoMapper;
     using StonksAPI.DTO;
+    using StonksAPI.Entities;
     using StonksAPI.Utility;
 
     public class MappingProfile : Profile
@@ -24,6 +25,10 @@
                     .ToList()
                 ) 
             );
+
+            CreateMap<CreateHoldingDto, Holding>()
+                .ForMember(p => p.PurchaseDate, opt=>opt.MapFrom(s => DateTime.Now));
+
         }
     }
 }
