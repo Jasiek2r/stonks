@@ -9,58 +9,48 @@ using System.Security.Claims;
 
 namespace StonksAPI.Controllers
 {
+
+    /*
+     * REST controller for managing user's virtual portfolio and tracking their investments
+     */
     [Route("holdings")]
+    [Authorize]
     public class HoldingsController : Controller
     {
         private readonly IHoldingsService _holdingsService;
         private readonly UserDbContext _userDbContext;
-        private readonly IMapper _mapper;
-        public HoldingsController(IHoldingsService holdingsService, UserDbContext userDbContext, IMapper mapper)
+        public HoldingsController(IHoldingsService holdingsService, UserDbContext userDbContext)
         {
             _holdingsService = holdingsService;
             _userDbContext = userDbContext;
-            _mapper = mapper;
         }
 
         [HttpGet("{id}")]
-        [Authorize]
         public ActionResult<Holding> GetHolding([FromRoute] int id)
         {
             var holding = _userDbContext.Holdings.FirstOrDefault(x => x.Id == id);
             return Ok(holding);
         }
 
+
         [HttpGet]
         public ActionResult<IEnumerable<Holding>> GetAllHoldingsForUser()
         {
+            //Fetches all financial assets held by the currently logged in user
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (!int.TryParse(userId, out int holdingUserId))
-            {
-                return BadRequest();
-            }
-            var holdings = _userDbContext.Holdings.Where(r => r.UserId == holdingUserId).ToList();
+            var holdings = _holdingsService.GetAllHoldingsForUser(userId);
             return Ok(holdings);
+
         }
 
         [HttpPost]
-        [Authorize]
         public ActionResult CreateHolding([FromBody] CreateHoldingDto dto)
         {
-            var holding = _mapper.Map<Holding>(dto);
-
-            //update user id from NameIdentifier Claim
+            //Creates a new asset owned by the currently logged in user
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-            if (!int.TryParse(userId, out int holdingUserId))
-            {
-                return BadRequest();
-            }
-            holding.UserId = holdingUserId;
+            int createdHoldingId = _holdingsService.CreateHolding(dto, userId);
 
-            //add holding to database
-            _userDbContext.Holdings.Add(holding);
-            _userDbContext.SaveChanges();
-
-            return Created($"/holdings/{holding.Id}", null);
+            return Created($"/holdings/{createdHoldingId}", null);
         }
     }
 }
