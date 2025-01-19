@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "7sFvooRDph9vyGxImF88YwxefpYkKOTybFF49WVg3g0=",
+  "Source": "StonksAPI",
+  "BasePath": "_content/StonksAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}
