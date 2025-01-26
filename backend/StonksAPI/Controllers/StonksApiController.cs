@@ -22,7 +22,7 @@ namespace StonksAPI.Controllers
      * already quite long comment.
      */
     [ApiController]
-    [Route("api/asset")]
+    [Route("api")]
     public class StonksApiController : Controller
     {
         private readonly IStonksApiService _stonksApiService;
