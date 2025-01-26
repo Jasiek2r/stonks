@@ -2,7 +2,7 @@
   {
     "ContainingType": "StonksAPI.Controllers.StonksApiController",
     "Method": "WelcomeToApi",
-    "RelativePath": "api/asset",
+    "RelativePath": "api",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -12,7 +12,7 @@
   {
     "ContainingType": "StonksAPI.Controllers.StonksApiController",
     "Method": "GetAssetData",
-    "RelativePath": "api/asset/{ticker}",
+    "RelativePath": "api/{ticker}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -33,7 +33,7 @@
   {
     "ContainingType": "StonksAPI.Controllers.StonksApiController",
     "Method": "GetIntradayAssetData",
-    "RelativePath": "api/asset/{ticker}/intraday",
+    "RelativePath": "api/{ticker}/intraday",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
