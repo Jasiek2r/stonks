@@ -2,6 +2,6 @@
 {
     public class Quotations
     {
-        public List<Quotation> quotations { get; set; }
+        public List<Quotation> QuotationsList { get; set; }
     }
 }

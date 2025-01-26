@@ -50,7 +50,7 @@ namespace StonksAPI.Services
 
             //convert to uniform internal format
             ApiResponseAdapter apiResponseAdapter = new ApiResponseAdapter(jsonResponse);
-            ApiSeries jsonSeries = apiResponseAdapter.extractSeries();
+            ApiSeries jsonSeries = apiResponseAdapter.ExtractSeries();
 
             //map to Quotations object            
             Quotations quotations = _autoMapper.Map<Quotations>(jsonSeries);

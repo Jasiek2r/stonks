@@ -13,7 +13,7 @@
              * This will allow AutoMapper to map from ApiResponse to our Data Transfer Object (DTO) of Quotations
              */
             CreateMap<ApiSeries, Quotations>()
-                .ForMember(dest => dest.quotations, opt => opt.MapFrom(src =>
+                .ForMember(dest => dest.QuotationsList, opt => opt.MapFrom(src =>
                     src.TimeSeries.Select(ts => new Quotation
                         {
                             TimeInterval = ts.Key,
