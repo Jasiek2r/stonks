@@ -5,15 +5,15 @@
 // To try out, run visual studio project and then click "Send request"
 
 
-GET {{StonksAPI_HostAddress}}/api/asset/IBM?interval=daily
+GET {{StonksAPI_HostAddress}}/api/IBM?interval=daily
 Accept: application/json
 ### 1. Fetches daily stock prices by ticker and interval 
 
-GET {{StonksAPI_HostAddress}}/api/asset/IBM?interval=weekly
+GET {{StonksAPI_HostAddress}}/api/IBM?interval=weekly
 Accept: application/json
 ### 2. Fetches weekly stock prices by ticker and interval 
 
-GET {{StonksAPI_HostAddress}}/api/asset/IBM/intraday?interval=60min
+GET {{StonksAPI_HostAddress}}/api/IBM/intraday?interval=60min
 Accept: application/json
 ### 3. Fetches intraday hourly stock prices by ticker and interval 
 
@@ -44,3 +44,6 @@ GET {{StonksAPI_HostAddress}}/holdings/1
 GET {{StonksAPI_HostAddress}}/holdings/1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTczNTk5Nzc0NiwiaXNzIjoiaHR0cDovL3N0b2NrbWFya2V0YXBpLmgyai5jb20iLCJhdWQiOiJodHRwOi8vc3RvY2ttYXJrZXRhcGkuaDJqLmNvbSJ9.9uvej2xb5WALl8lvU4u4CcCnoIGaqBl0RDuUExQVVPU
 ### 7. Sends a request to fetch holding by id but with proper user token (should return "200 OK")
+
+### 8. Fetches general information about an asset
+GET {{StonksAPI_HostAddress}}/api/IBM/info

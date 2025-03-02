@@ -5,6 +5,7 @@ using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
 using StonksAPI.Utility;
 using StonksAPI.DTO;
+using StonksAPI.Utility.Parsers;
 
 namespace StonksAPI.Services
 {
@@ -17,13 +18,15 @@ namespace StonksAPI.Services
 
         private readonly IConfiguration _configuration;
         private readonly HttpClient _httpClient;
-        private readonly IMapper _autoMapper;
         private readonly string _apiKey;
-
-        public StonksApiService(IConfiguration configuration, HttpClient httpClient, IMapper autoMapper) {
+        private readonly IQuotationParser _quotationParser;
+        private readonly IGeneralInfoParser _generalInformationParser;
+        public StonksApiService(IConfiguration configuration, HttpClient httpClient, 
+            IQuotationParser quotationParser, IGeneralInfoParser generalInformationParser) {
             _configuration = configuration;
             _httpClient = httpClient;
-            _autoMapper = autoMapper;
+            _quotationParser = quotationParser;
+            _generalInformationParser = generalInformationParser;
             _apiKey = _configuration["ApiSettings:ApiKey"]!;
         }
 
@@ -42,23 +45,6 @@ namespace StonksAPI.Services
         }
 
 
-        //Helper method for converting raw json string to our Quotations object
-        private Quotations ParseJsonResponse(string jsonString)
-        {
-            //deserialize object
-            ApiResponse jsonResponse = JsonConvert.DeserializeObject<ApiResponse>(jsonString);
-
-            //convert to uniform internal format
-            ApiResponseAdapter apiResponseAdapter = new ApiResponseAdapter(jsonResponse);
-            ApiSeries jsonSeries = apiResponseAdapter.ExtractSeries();
-
-            //map to Quotations object            
-            Quotations quotations = _autoMapper.Map<Quotations>(jsonSeries);
-
-            return quotations;
-        }
-
-
         public async Task<Quotations> GetAssetData(string ticker, string interval)
         {
             // map interval to path (i.e. Daily -> TIME_SERIES_DAILY and so on)
@@ -67,7 +53,7 @@ namespace StonksAPI.Services
 
             var url = $"https://www.alphavantage.co/query?function={intervalRoute}&symbol={ticker}&apikey={_apiKey}";
             var jsonString = await FetchJson(url);
-            Quotations quotations = ParseJsonResponse(jsonString);
+            Quotations quotations = _quotationParser.ParseJsonResponse(jsonString);
 
             //return Quotations to the controller
             return quotations;
@@ -76,10 +62,20 @@ namespace StonksAPI.Services
         {
             var url = $"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval={interval}&apikey={_apiKey}";
             var jsonString = await FetchJson(url);
-            Quotations quotations = ParseJsonResponse(jsonString);
+            Quotations quotations = _quotationParser.ParseJsonResponse(jsonString);
 
             //return Quotations to the controller
             return quotations;
+        }
+
+        public async Task<GeneralAssetInformation> GetGeneralInformation(string ticker)
+        {
+            var url = $"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={ticker}&apikey={_apiKey}";
+            var jsonString = await FetchJson(url);
+            GeneralAssetInformation assetInformation = _generalInformationParser.ParseJsonResponse(jsonString);
+
+            //return General Asset Information to the controller
+            return assetInformation;
         }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using StonksAPI.DTO;
 using StonksAPI.Services;
+using StonksAPI.Utility;
 using System.Net;
 
 namespace StonksAPI.Controllers
@@ -68,6 +69,15 @@ namespace StonksAPI.Controllers
 
             // Return a 200 OK Status Code to the user along with quotations in JSON format
             return Ok(quotations);
+        }
+
+        [HttpGet("{ticker}/info")]        
+        public async Task<IActionResult> GetGeneralInformation([FromRoute] string ticker)
+        {
+            // Fetch general asset information
+            GeneralAssetInformation assetInformation = await _stonksApiService.GetGeneralInformation(ticker);
+            return Ok(assetInformation);
+            
         }
     }
 
