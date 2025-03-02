@@ -19,8 +19,6 @@ namespace StonksAPI.Utility
         [JsonProperty("Time Series (5min)")]
         public Dictionary<string, Quote> TimeSeries5min { get; set; }
 
-
-
     }
 
 

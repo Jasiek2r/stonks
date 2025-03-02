@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using StonksAPI.DTO;
 using StonksAPI.Entities;
 using StonksAPI.Services;
+using StonksAPI.Utility.Parsers;
 using StonksAPI.Validators;
 using System.Text;
 
@@ -54,6 +55,8 @@ namespace StonksAPI
             builder.Services.AddScoped<IHoldingsService, HoldingsService>();
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
             builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
+            builder.Services.AddScoped<IGeneralInfoParser, GeneralInformationParser>();
+            builder.Services.AddScoped<IQuotationParser, QuotationParser>();
             builder.Services.AddSingleton<UserDbContext>();
             builder.Services.AddSingleton(authenticationSettings);
             

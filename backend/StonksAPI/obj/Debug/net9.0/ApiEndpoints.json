@@ -32,6 +32,22 @@
   },
   {
     "ContainingType": "StonksAPI.Controllers.StonksApiController",
+    "Method": "GetGeneralInformation",
+    "RelativePath": "api/{ticker}/info",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticker",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StonksAPI.Controllers.StonksApiController",
     "Method": "GetIntradayAssetData",
     "RelativePath": "api/{ticker}/intraday",
     "HttpMethod": "GET",
