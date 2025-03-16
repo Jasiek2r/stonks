@@ -52,5 +52,12 @@ namespace StonksAPI.Controllers
 
             return Created($"/holdings/{createdHoldingId}", null);
         }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteHolding([FromRoute] int id) {
+            var result = _holdingsService.DeleteHolding(id);
+            if (!result) return NotFound(id);
+            return Ok();
+        }
     }
 }

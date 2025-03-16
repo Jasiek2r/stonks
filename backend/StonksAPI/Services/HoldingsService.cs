@@ -3,6 +3,7 @@ using StonksAPI.Entities;
 using System.Security.Claims;
 using StonksAPI.Exceptions;
 using AutoMapper;
+using StonksAPI.Utility;
 
 
 namespace StonksAPI.Services
@@ -44,5 +45,18 @@ namespace StonksAPI.Services
             return holdings;
         }
 
+        public bool DeleteHolding(int holdingId)
+        {
+            var holding = _userDbContext.Holdings.FirstOrDefault(x => x.Id == holdingId);
+            if (holding == null)
+            {
+                // If the holding does not appear in our database, there is nothing to delete
+                return false;
+            }
+            // Otherwise remove the holding
+            _userDbContext.Holdings.Remove(holding);
+            _userDbContext.SaveChanges();
+            return true;
+        }
     }
 }

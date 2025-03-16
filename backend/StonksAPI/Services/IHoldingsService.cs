@@ -8,5 +8,6 @@ namespace StonksAPI.Services
     {
         public IEnumerable<Holding> GetAllHoldingsForUser(string userId);
         public int CreateHolding(CreateHoldingDto dto, string userId);
+        public bool DeleteHolding(int holdingId);
     }
 }
