@@ -3,7 +3,7 @@ using StonksAPI.Utility;
 
 namespace StonksAPI.DTO.Dividend
 {
-    public class Dividends : IParsingResult
+    public class Dividends : IDeserializable
     {
         [JsonProperty("data")]
         public List<Dividend> DividendList { get; set; }

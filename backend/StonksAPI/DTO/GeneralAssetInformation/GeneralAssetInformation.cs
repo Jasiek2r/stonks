@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace StonksAPI.DTO.GeneralAssetInformation
 {
-    public class GeneralAssetInformation : IParsingResult
+    public class GeneralAssetInformation : IDeserializable
     {
         [JsonProperty("1. symbol")]
         public string Ticker {  get; set; }

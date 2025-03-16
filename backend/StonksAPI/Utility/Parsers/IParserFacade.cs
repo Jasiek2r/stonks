@@ -1,7 +1,8 @@
 ﻿namespace StonksAPI.Utility.Parsers
 {
+    // Declares a contract of a Facade for all Parsers
     public interface IParserFacade
     {
-        public IParsingResult ParseJsonResponse<T>(string data) where T : IParsingResult;
+        public IDeserializable ParseJsonResponse<T>(string data) where T : IDeserializable;
     }
 }

@@ -27,7 +27,8 @@ namespace StonksAPI.Validators
                     {
                         context.AddFailure("Email", "That email is taken");
                     }
-                });
+                }
+            );
         }
     }
 }

@@ -84,6 +84,7 @@ namespace StonksAPI.Services
             var jsonString = await FetchJson(url);
             Dividends dividends =
                 (Dividends)_parserFacade.ParseJsonResponse<Dividends>(jsonString);
+            //return a list of dividends to the controller
             return dividends;
         }
     }

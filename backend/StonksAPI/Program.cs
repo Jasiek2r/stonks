@@ -61,9 +61,10 @@ namespace StonksAPI
             builder.Services.AddScoped<IParserFacade, ParserFacade>();
             builder.Services.AddSingleton<UserDbContext>();
             builder.Services.AddSingleton(authenticationSettings);
-            
 
-            builder.Services.AddControllers().AddFluentValidation();
+            builder.Services.AddControllers();
+            
+            builder.Services.AddFluentValidationAutoValidation();
 
             //Build an app
             var app = builder.Build();
