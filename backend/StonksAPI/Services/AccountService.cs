@@ -15,7 +15,8 @@ namespace StonksAPI.Services
         private readonly UserDbContext _context;
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly AuthenticationSettings _authenticationSettings;
-        public AccountService(UserDbContext context, IPasswordHasher<User> passwordHasher, AuthenticationSettings authenticationSettings) {
+        public AccountService(UserDbContext context, IPasswordHasher<User> passwordHasher, 
+            AuthenticationSettings authenticationSettings) {
             _context = context;
             _passwordHasher = passwordHasher;
             _authenticationSettings = authenticationSettings;

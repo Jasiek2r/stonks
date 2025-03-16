@@ -58,6 +58,7 @@ namespace StonksAPI
             builder.Services.AddScoped<IGeneralInfoParser, GeneralInformationParser>();
             builder.Services.AddScoped<IQuotationParser, QuotationParser>();
             builder.Services.AddScoped<IDividendParser, DividendParser>();
+            builder.Services.AddScoped<IParserFacade, ParserFacade>();
             builder.Services.AddSingleton<UserDbContext>();
             builder.Services.AddSingleton(authenticationSettings);
             

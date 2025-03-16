@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
+using StonksAPI.Utility;
 using System.Text.Json.Serialization;
 
 namespace StonksAPI.DTO.GeneralAssetInformation
 {
-    public class GeneralAssetInformation
+    public class GeneralAssetInformation : IParsingResult
     {
         [JsonProperty("1. symbol")]
         public string Ticker {  get; set; }
