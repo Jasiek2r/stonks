@@ -4,8 +4,11 @@ using System.Text.Json.Serialization;
 using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
 using StonksAPI.Utility;
-using StonksAPI.DTO;
 using StonksAPI.Utility.Parsers;
+using StonksAPI.DTO.Quotation;
+using StonksAPI.DTO.GeneralAssetInformation;
+using StonksAPI.DTO.Dividend;
+using System.Reflection.Metadata.Ecma335;
 
 namespace StonksAPI.Services
 {
@@ -21,12 +24,15 @@ namespace StonksAPI.Services
         private readonly string _apiKey;
         private readonly IQuotationParser _quotationParser;
         private readonly IGeneralInfoParser _generalInformationParser;
+        private readonly IDividendParser _dividendParser;
         public StonksApiService(IConfiguration configuration, HttpClient httpClient, 
-            IQuotationParser quotationParser, IGeneralInfoParser generalInformationParser) {
+            IQuotationParser quotationParser, IGeneralInfoParser generalInformationParser,
+            IDividendParser dividendParser) {
             _configuration = configuration;
             _httpClient = httpClient;
             _quotationParser = quotationParser;
             _generalInformationParser = generalInformationParser;
+            _dividendParser = dividendParser;
             _apiKey = _configuration["ApiSettings:ApiKey"]!;
         }
 
@@ -76,6 +82,13 @@ namespace StonksAPI.Services
 
             //return General Asset Information to the controller
             return assetInformation;
+        }
+        public async Task<Dividends> GetDividends(string ticker)
+        {
+            var url = $"https://www.alphavantage.co/query?function=DIVIDENDS&symbol=IBM&apikey=demo";
+            var jsonString = await FetchJson(url);
+            Dividends dividends = _dividendParser.ParseJsonResponse(jsonString);
+            return dividends;
         }
     }
 }

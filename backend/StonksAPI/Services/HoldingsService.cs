@@ -1,9 +1,9 @@
-﻿using StonksAPI.DTO;
-using StonksAPI.Entities;
+﻿using StonksAPI.Entities;
 using System.Security.Claims;
 using StonksAPI.Exceptions;
 using AutoMapper;
 using StonksAPI.Utility;
+using StonksAPI.DTO.Holding;
 
 
 namespace StonksAPI.Services

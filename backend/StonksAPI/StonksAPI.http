@@ -53,19 +53,22 @@ Content-Type: application/json
 
 
 GET {{StonksAPI_HostAddress}}/holdings/2
-### 6. Sends a request to fetch holding by id (should return "401 Unauthorized")
+### 7. Sends a request to fetch holding by id (should return "401 Unauthorized")
 
 GET {{StonksAPI_HostAddress}}/holdings/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTc0MzQyMTAzNywiaXNzIjoiaHR0cDovL3N0b2NrbWFya2V0YXBpLmgyai5jb20iLCJhdWQiOiJodHRwOi8vc3RvY2ttYXJrZXRhcGkuaDJqLmNvbSJ9.-USNz0fwJR7RlEKsue_dTRmH3tCumaI5kPWQrtlV9VI
-### 7. Sends a request to fetch holding by id but with proper user token (should return "200 OK")
+### 8. Sends a request to fetch holding by id but with proper user token (should return "200 OK")
 
-GET {{StonksAPI_HostAddress}}/holdings/2
+GET {{StonksAPI_HostAddress}}/holdings
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTc0MzQyMTAzNywiaXNzIjoiaHR0cDovL3N0b2NrbWFya2V0YXBpLmgyai5jb20iLCJhdWQiOiJodHRwOi8vc3RvY2ttYXJrZXRhcGkuaDJqLmNvbSJ9.-USNz0fwJR7RlEKsue_dTRmH3tCumaI5kPWQrtlV9VI
-### 8. Sends a request to fetch all holdings created by the current user
+### 9. Sends a request to fetch all holdings created by the current user
 
 DELETE {{StonksAPI_HostAddress}}/holdings/2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1laWRlbnRpZmllciI6IjQiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoidGVzdCIsImV4cCI6MTc0MzQyMTY4OSwiaXNzIjoiaHR0cDovL3N0b2NrbWFya2V0YXBpLmgyai5jb20iLCJhdWQiOiJodHRwOi8vc3RvY2ttYXJrZXRhcGkuaDJqLmNvbSJ9.zGbp0LUcZ3kg9evLrhfDdQNkAxQ-yEvi6tbbeuRpNsk
-### 8. Sends a request to delete holding by id but with proper user token (should return "200 OK" if holding exists)
+### 10. Sends a request to delete holding by id but with proper user token (should return "200 OK" if holding exists)
 
-### 9. Fetches general information about an asset
+### 11. Fetches general information about an asset
 GET {{StonksAPI_HostAddress}}/api/IBM/info
+
+### 12. Fetches information about dividends of a given stock
+GET {{StonksAPI_HostAddress}}/api/IBM/dividends

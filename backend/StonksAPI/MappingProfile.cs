@@ -1,7 +1,8 @@
 ﻿namespace StonksAPI
 {
     using AutoMapper;
-    using StonksAPI.DTO;
+    using StonksAPI.DTO.Holding;
+    using StonksAPI.DTO.Quotation;
     using StonksAPI.Entities;
     using StonksAPI.Utility;
 

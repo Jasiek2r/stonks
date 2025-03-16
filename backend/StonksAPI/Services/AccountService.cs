@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using StonksAPI.DTO;
+using StonksAPI.DTO.User;
 using StonksAPI.Entities;
 using StonksAPI.Exceptions;
 using System.IdentityModel.Tokens.Jwt;

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace StonksAPI.DTO
+namespace StonksAPI.DTO.User
 {
     public class RegisterUserDto
     {

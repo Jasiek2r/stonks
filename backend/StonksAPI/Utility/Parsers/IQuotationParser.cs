@@ -1,4 +1,4 @@
-﻿using StonksAPI.DTO;
+﻿using StonksAPI.DTO.Quotation;
 
 namespace StonksAPI.Utility.Parsers
 {

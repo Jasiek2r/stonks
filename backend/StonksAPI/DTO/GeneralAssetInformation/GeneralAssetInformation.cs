@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 
-namespace StonksAPI.Utility
+namespace StonksAPI.DTO.GeneralAssetInformation
 {
     public class GeneralAssetInformation
     {

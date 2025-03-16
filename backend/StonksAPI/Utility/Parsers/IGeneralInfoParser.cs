@@ -1,4 +1,6 @@
-﻿namespace StonksAPI.Utility.Parsers
+﻿using StonksAPI.DTO.GeneralAssetInformation;
+
+namespace StonksAPI.Utility.Parsers
 {
     public interface IGeneralInfoParser
     {

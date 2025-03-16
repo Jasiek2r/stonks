@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StonksAPI.DTO;
+using StonksAPI.DTO.Holding;
 using StonksAPI.Entities;
 using StonksAPI.Migrations;
 using StonksAPI.Services;

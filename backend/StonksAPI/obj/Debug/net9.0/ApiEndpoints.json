@@ -32,6 +32,22 @@
   },
   {
     "ContainingType": "StonksAPI.Controllers.StonksApiController",
+    "Method": "GetDividends",
+    "RelativePath": "api/{ticker}/dividends",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticker",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "StonksAPI.Controllers.StonksApiController",
     "Method": "GetGeneralInformation",
     "RelativePath": "api/{ticker}/info",
     "HttpMethod": "GET",
@@ -77,7 +93,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "StonksAPI.DTO.LoginDto",
+        "Type": "StonksAPI.DTO.User.LoginDto",
         "IsRequired": true
       }
     ],
@@ -93,7 +109,7 @@
     "Parameters": [
       {
         "Name": "registerUserDto",
-        "Type": "StonksAPI.DTO.RegisterUserDto",
+        "Type": "StonksAPI.DTO.User.RegisterUserDto",
         "IsRequired": true
       }
     ],

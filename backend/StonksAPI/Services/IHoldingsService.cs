@@ -1,5 +1,5 @@
 ﻿using Microsoft.Identity.Client;
-using StonksAPI.DTO;
+using StonksAPI.DTO.Holding;
 using StonksAPI.Entities;
 
 namespace StonksAPI.Services

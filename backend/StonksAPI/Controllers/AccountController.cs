@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using StonksAPI.DTO;
+using StonksAPI.DTO.User;
 using StonksAPI.Services;
 
 namespace StonksAPI.Controllers

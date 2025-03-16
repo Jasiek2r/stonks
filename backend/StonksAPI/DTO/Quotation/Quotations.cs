@@ -1,4 +1,4 @@
-﻿namespace StonksAPI.DTO
+﻿namespace StonksAPI.DTO.Quotation
 {
     public class Quotations
     {
