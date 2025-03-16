@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Newtonsoft.Json;
 using StonksAPI.DTO;
+using StonksAPI.DTO.GeneralAssetInformation;
 
 namespace StonksAPI.Utility.Parsers
 {

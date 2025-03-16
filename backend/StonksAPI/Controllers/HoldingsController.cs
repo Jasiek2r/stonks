@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StonksAPI.DTO;
+using StonksAPI.DTO.Holding;
 using StonksAPI.Entities;
 using StonksAPI.Migrations;
 using StonksAPI.Services;
@@ -51,6 +51,13 @@ namespace StonksAPI.Controllers
             int createdHoldingId = _holdingsService.CreateHolding(dto, userId);
 
             return Created($"/holdings/{createdHoldingId}", null);
+        }
+
+        [HttpDelete("{id}")]
+        public ActionResult DeleteHolding([FromRoute] int id) {
+            var result = _holdingsService.DeleteHolding(id);
+            if (!result) return NotFound(id);
+            return Ok();
         }
     }
 }

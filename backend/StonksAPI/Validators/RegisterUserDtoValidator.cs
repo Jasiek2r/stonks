@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using Microsoft.EntityFrameworkCore;
-using StonksAPI.DTO;
+using StonksAPI.DTO.User;
 using StonksAPI.Entities;
 
 namespace StonksAPI.Validators
@@ -27,7 +27,8 @@ namespace StonksAPI.Validators
                     {
                         context.AddFailure("Email", "That email is taken");
                     }
-                });
+                }
+            );
         }
     }
 }

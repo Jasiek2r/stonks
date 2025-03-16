@@ -4,8 +4,11 @@ using System.Text.Json.Serialization;
 using static System.Net.WebRequestMethods;
 using Newtonsoft.Json;
 using StonksAPI.Utility;
-using StonksAPI.DTO;
 using StonksAPI.Utility.Parsers;
+using StonksAPI.DTO.Quotation;
+using StonksAPI.DTO.GeneralAssetInformation;
+using StonksAPI.DTO.Dividend;
+using System.Reflection.Metadata.Ecma335;
 
 namespace StonksAPI.Services
 {
@@ -19,14 +22,11 @@ namespace StonksAPI.Services
         private readonly IConfiguration _configuration;
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
-        private readonly IQuotationParser _quotationParser;
-        private readonly IGeneralInfoParser _generalInformationParser;
-        public StonksApiService(IConfiguration configuration, HttpClient httpClient, 
-            IQuotationParser quotationParser, IGeneralInfoParser generalInformationParser) {
+        private readonly IParserFacade _parserFacade;
+        public StonksApiService(IConfiguration configuration, HttpClient httpClient, IParserFacade parserFacade) {
             _configuration = configuration;
             _httpClient = httpClient;
-            _quotationParser = quotationParser;
-            _generalInformationParser = generalInformationParser;
+            _parserFacade = parserFacade;
             _apiKey = _configuration["ApiSettings:ApiKey"]!;
         }
 
@@ -53,7 +53,7 @@ namespace StonksAPI.Services
 
             var url = $"https://www.alphavantage.co/query?function={intervalRoute}&symbol={ticker}&apikey={_apiKey}";
             var jsonString = await FetchJson(url);
-            Quotations quotations = _quotationParser.ParseJsonResponse(jsonString);
+            Quotations quotations = (Quotations)_parserFacade.ParseJsonResponse<Quotations>(jsonString);
 
             //return Quotations to the controller
             return quotations;
@@ -62,7 +62,7 @@ namespace StonksAPI.Services
         {
             var url = $"https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval={interval}&apikey={_apiKey}";
             var jsonString = await FetchJson(url);
-            Quotations quotations = _quotationParser.ParseJsonResponse(jsonString);
+            Quotations quotations = (Quotations)_parserFacade.ParseJsonResponse<Quotations>(jsonString);
 
             //return Quotations to the controller
             return quotations;
@@ -72,10 +72,20 @@ namespace StonksAPI.Services
         {
             var url = $"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={ticker}&apikey={_apiKey}";
             var jsonString = await FetchJson(url);
-            GeneralAssetInformation assetInformation = _generalInformationParser.ParseJsonResponse(jsonString);
+            GeneralAssetInformation assetInformation = 
+                (GeneralAssetInformation)_parserFacade.ParseJsonResponse<GeneralAssetInformation>(jsonString);
 
             //return General Asset Information to the controller
             return assetInformation;
+        }
+        public async Task<Dividends> GetDividends(string ticker)
+        {
+            var url = $"https://www.alphavantage.co/query?function=DIVIDENDS&symbol={ticker}&apikey={_apiKey}";
+            var jsonString = await FetchJson(url);
+            Dividends dividends =
+                (Dividends)_parserFacade.ParseJsonResponse<Dividends>(jsonString);
+            //return a list of dividends to the controller
+            return dividends;
         }
     }
 }

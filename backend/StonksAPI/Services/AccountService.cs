@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
-using StonksAPI.DTO;
+using StonksAPI.DTO.User;
 using StonksAPI.Entities;
 using StonksAPI.Exceptions;
 using System.IdentityModel.Tokens.Jwt;
@@ -15,7 +15,8 @@ namespace StonksAPI.Services
         private readonly UserDbContext _context;
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly AuthenticationSettings _authenticationSettings;
-        public AccountService(UserDbContext context, IPasswordHasher<User> passwordHasher, AuthenticationSettings authenticationSettings) {
+        public AccountService(UserDbContext context, IPasswordHasher<User> passwordHasher, 
+            AuthenticationSettings authenticationSettings) {
             _context = context;
             _passwordHasher = passwordHasher;
             _authenticationSettings = authenticationSettings;

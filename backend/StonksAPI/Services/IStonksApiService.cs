@@ -1,5 +1,6 @@
-﻿using StonksAPI.DTO;
-using StonksAPI.Utility;
+﻿using StonksAPI.DTO.Dividend;
+using StonksAPI.DTO.GeneralAssetInformation;
+using StonksAPI.DTO.Quotation;
 
 namespace StonksAPI.Services
 {
@@ -10,9 +11,9 @@ namespace StonksAPI.Services
     public interface IStonksApiService
     {
         public async Task<Quotations> GetAssetData(string ticker, string interval) { return null; }
-
         public async Task<GeneralAssetInformation> GetGeneralInformation(string ticker) { return null; }
-
         public async Task<Quotations> GetIntradayAssetData(string ticker, string interval) { return null; }
+        public async Task<Dividends> GetDividends(string ticker) { return null; }
+
     }
 }

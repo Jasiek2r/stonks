@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using StonksAPI.DTO;
+using StonksAPI.DTO.Dividend;
+using StonksAPI.DTO.GeneralAssetInformation;
+using StonksAPI.DTO.Quotation;
 using StonksAPI.Services;
-using StonksAPI.Utility;
 using System.Net;
 
 namespace StonksAPI.Controllers
@@ -78,6 +79,13 @@ namespace StonksAPI.Controllers
             GeneralAssetInformation assetInformation = await _stonksApiService.GetGeneralInformation(ticker);
             return Ok(assetInformation);
             
+        }
+
+        [HttpGet("{ticker}/dividends")]
+        public async Task<IActionResult> GetDividends([FromRoute] string ticker)
+        {
+            Dividends dividends = await _stonksApiService.GetDividends(ticker);
+            return Ok(dividends);
         }
     }
 
