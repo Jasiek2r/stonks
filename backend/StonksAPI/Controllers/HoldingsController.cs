@@ -38,6 +38,10 @@ namespace StonksAPI.Controllers
         {
             //Fetches all financial assets held by the currently logged in user
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // If userId is null, return NotFound
+            if (userId == null) return NotFound("User not found");
+            
             var holdings = _holdingsService.GetAllHoldingsForUser(userId);
             return Ok(holdings);
 
@@ -48,6 +52,10 @@ namespace StonksAPI.Controllers
         {
             //Creates a new asset owned by the currently logged in user
             var userId = User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+
+            // If userId is null, return NotFound
+            if (userId == null) return NotFound("User not found");
+
             int createdHoldingId = _holdingsService.CreateHolding(dto, userId);
 
             return Created($"/holdings/{createdHoldingId}", null);

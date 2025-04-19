@@ -2,14 +2,14 @@
 {
     public class ApiResponseAdapter
     {
-        private ApiResponse _apiResponse;
-        private ApiSeries _apiSeries;
+        private readonly ApiResponse _apiResponse;
+        private readonly ApiSeries _apiSeries;
         public ApiResponseAdapter(ApiResponse apiResponse) { 
             _apiResponse = apiResponse;
             _apiSeries = new ApiSeries();
         }
 
-        private void TryLoadTimeSeries(Dictionary<string, Quote> fieldContent)
+        private void TryLoadTimeSeries(Dictionary<string, Quote>? fieldContent)
         {
             if (fieldContent != null)
             {

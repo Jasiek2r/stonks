@@ -27,6 +27,8 @@
                 ) 
             );
 
+            CreateMap<CompanyOverviewResponse, CompanyOverview>();
+
 
             CreateMap<CreateHoldingDto, Holding>()
                 .ForMember(p => p.PurchaseDate, opt=>opt.MapFrom(s => DateTime.Now));

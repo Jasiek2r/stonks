@@ -7,6 +7,7 @@ using StonksAPI.Entities;
 using StonksAPI.Services;
 using StonksAPI.Utility.Parsers;
 using StonksAPI.Validators;
+using System.Globalization;
 using System.Text;
 
 namespace StonksAPI

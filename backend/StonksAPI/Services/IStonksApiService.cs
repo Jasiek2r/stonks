@@ -11,11 +11,11 @@ namespace StonksAPI.Services
      */
     public interface IStonksApiService
     {
-        public async Task<Quotations> GetAssetData(string ticker, string interval) { return null; }
-        public async Task<GeneralAssetInformation> GetGeneralInformation(string ticker) { return null; }
-        public async Task<Quotations> GetIntradayAssetData(string ticker, string interval) { return null; }
-        public async Task<Dividends> GetDividends(string ticker) { return null; }
-        public async Task<CompanyOverview> GetCompanyOverview(string ticker) { return null; }
+        public Task<Quotations> GetAssetData(string ticker, string interval);
+        public Task<GeneralAssetInformation> GetGeneralInformation(string ticker);
+        public Task<Quotations> GetIntradayAssetData(string ticker, string interval);
+        public Task<Dividends> GetDividends(string ticker);
+        public Task<CompanyOverview> GetCompanyOverview(string ticker);
 
     }
 }

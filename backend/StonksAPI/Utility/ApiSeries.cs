@@ -5,6 +5,6 @@ namespace StonksAPI.Utility
     public class ApiSeries
     {
         [JsonProperty("Time Series")]
-        public Dictionary<string, Quote> TimeSeries { get; set; }
+        public Dictionary<string, Quote>? TimeSeries { get; set; }
     }
 }

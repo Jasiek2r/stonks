@@ -7,7 +7,7 @@ namespace StonksAPI.Entities
      */
     public class UserDbContext : DbContext
     {
-        private string _connectionString =
+        private readonly string _connectionString =
             "Server=(localdb)\\mssqllocaldb;Database=UserDb;Trusted_Connection=True;";
         public DbSet<User> Users { get; set; }
         public DbSet<Holding> Holdings { get; set; }
