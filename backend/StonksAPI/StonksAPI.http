@@ -71,3 +71,6 @@ GET {{StonksAPI_HostAddress}}/api/IBM/info
 
 GET {{StonksAPI_HostAddress}}/api/IBM/dividends
 ### 12. Fetches information about dividends of a given stock
+
+GET {{StonksAPI_HostAddress}}/api/IBM/overview
+### 12. Fetches overview of the company

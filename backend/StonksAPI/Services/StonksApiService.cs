@@ -23,7 +23,8 @@ namespace StonksAPI.Services
         private readonly HttpClient _httpClient;
         private readonly string _apiKey;
         private readonly IParserFacade _parserFacade;
-        public StonksApiService(IConfiguration configuration, HttpClient httpClient, IParserFacade parserFacade) {
+        public StonksApiService(IConfiguration configuration, HttpClient httpClient, IParserFacade parserFacade)
+        {
             _configuration = configuration;
             _httpClient = httpClient;
             _parserFacade = parserFacade;
@@ -72,7 +73,7 @@ namespace StonksAPI.Services
         {
             var url = $"https://www.alphavantage.co/query?function=SYMBOL_SEARCH&keywords={ticker}&apikey={_apiKey}";
             var jsonString = await FetchJson(url);
-            GeneralAssetInformation assetInformation = 
+            GeneralAssetInformation assetInformation =
                 (GeneralAssetInformation)_parserFacade.ParseJsonResponse<GeneralAssetInformation>(jsonString);
 
             //return General Asset Information to the controller
@@ -86,6 +87,15 @@ namespace StonksAPI.Services
                 (Dividends)_parserFacade.ParseJsonResponse<Dividends>(jsonString);
             //return a list of dividends to the controller
             return dividends;
+        }
+        public async Task<CompanyOverview> GetCompanyOverview(string ticker)
+        {
+            var url = $"https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker}&apikey=demo";
+            var jsonString = await FetchJson(url);
+            CompanyOverview companyOverview =
+                (CompanyOverview)_parserFacade.ParseJsonResponse<CompanyOverviewResponse>(jsonString);
+            //return a list of dividends to the controller
+            return companyOverview;
         }
     }
 }

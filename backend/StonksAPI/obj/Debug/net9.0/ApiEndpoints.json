@@ -84,6 +84,22 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "StonksAPI.Controllers.StonksApiController",
+    "Method": "GetOverview",
+    "RelativePath": "api/{ticker}/overview",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "ticker",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "StonksAPI.Controllers.AccountController",
     "Method": "Login",
     "RelativePath": "auth/login",
