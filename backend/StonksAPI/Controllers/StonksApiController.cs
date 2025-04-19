@@ -4,6 +4,7 @@ using StonksAPI.DTO.Dividend;
 using StonksAPI.DTO.GeneralAssetInformation;
 using StonksAPI.DTO.Quotation;
 using StonksAPI.Services;
+using StonksAPI.Utility;
 using System.Net;
 
 namespace StonksAPI.Controllers
@@ -86,6 +87,13 @@ namespace StonksAPI.Controllers
         {
             Dividends dividends = await _stonksApiService.GetDividends(ticker);
             return Ok(dividends);
+        }
+        [HttpGet("{ticker}/overview")]
+        public async Task<IActionResult> GetOverview([FromRoute] string ticker)
+        {
+            // Fetch company's overview
+            CompanyOverview overview = await _stonksApiService.GetCompanyOverview(ticker);
+            return Ok(overview);
         }
     }
 

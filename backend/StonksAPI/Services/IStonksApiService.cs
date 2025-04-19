@@ -1,6 +1,7 @@
 ﻿using StonksAPI.DTO.Dividend;
 using StonksAPI.DTO.GeneralAssetInformation;
 using StonksAPI.DTO.Quotation;
+using StonksAPI.Utility;
 
 namespace StonksAPI.Services
 {
@@ -14,6 +15,7 @@ namespace StonksAPI.Services
         public async Task<GeneralAssetInformation> GetGeneralInformation(string ticker) { return null; }
         public async Task<Quotations> GetIntradayAssetData(string ticker, string interval) { return null; }
         public async Task<Dividends> GetDividends(string ticker) { return null; }
+        public async Task<CompanyOverview> GetCompanyOverview(string ticker) { return null; }
 
     }
 }

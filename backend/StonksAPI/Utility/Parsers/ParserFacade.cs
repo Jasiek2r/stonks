@@ -14,13 +14,16 @@ namespace StonksAPI.Utility.Parsers
         private readonly IQuotationParser _quotationParser;
         private readonly IGeneralInfoParser _generalInfoParser;
         private readonly IDividendParser _dividendParser;
+        private readonly IOverviewParser _overviewParser;
         public ParserFacade(IDividendParser dividendParser,
             IGeneralInfoParser generalInfoParser,
-            IQuotationParser quotationParser)
+            IQuotationParser quotationParser,
+            IOverviewParser overviewParser)
         {
             _quotationParser = quotationParser;
             _generalInfoParser = generalInfoParser;
             _dividendParser = dividendParser;
+            _overviewParser = overviewParser;
         }
         public IDeserializable ParseJsonResponse<T>(string data) where T : IDeserializable {
 
@@ -42,8 +45,16 @@ namespace StonksAPI.Utility.Parsers
                 Dividends result = _dividendParser.ParseJsonResponse(data);
                 return result;
             }
-
-            return default(T);
+            else if(typeof(T) == typeof(CompanyOverviewResponse))
+            {
+                CompanyOverview result = _overviewParser.ParseJsonResponse(data);
+                return result;
+            }
+            else
+            {
+                // If the type is not recognized, throw an exception or handle it accordingly
+                throw new NotSupportedException($"Parsing for type {typeof(T).Name} is not supported.");
+            }
         } 
     }
 }
