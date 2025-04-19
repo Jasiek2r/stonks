@@ -2,7 +2,7 @@
 {
     public class Quotation
     {
-        public string TimeInterval { get; set; }
+        public string? TimeInterval { get; set; }
         public decimal Open {  get; set; }
         public decimal High { get; set; }
         public decimal Low { get; set; }

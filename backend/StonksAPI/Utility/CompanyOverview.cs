@@ -2,6 +2,10 @@
 {
     public class CompanyOverview : IDeserializable
     {
+        public CompanyOverview()
+        {
+            
+        }
         public CompanyOverview(CompanyOverviewResponse response)
         {
             Name = response.Name;
@@ -15,14 +19,14 @@
             DividendDate = response.DividendDate;
             ExDividendDate = response.ExDividendDate;
         }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public string Exchange { get; set; }
-        public string Currency { get; set; }
-        public string Country { get; set; }
-        public string Sector { get; set; }
-        public string Industry { get; set; }
-        public string Address { get; set; }
+        public string? Name { get; set; }
+        public string? Description { get; set; }
+        public string? Exchange { get; set; }
+        public string? Currency { get; set; }
+        public string? Country { get; set; }
+        public string? Sector { get; set; }
+        public string? Industry { get; set; }
+        public string? Address { get; set; }
         public long? MarketCap { get; set; }
         public decimal? EBITDA { get; set; }
         public decimal? PERatio { get; set; }
@@ -50,7 +54,7 @@
         public decimal? EVToEBITDA { get; set; }
         public decimal? Beta { get; set; }
         public long? SharesOutstanding { get; set; }
-        public string DividendDate { get; set; }
-        public string ExDividendDate { get; set; }
+        public string? DividendDate { get; set; }
+        public string? ExDividendDate { get; set; }
     }
 }

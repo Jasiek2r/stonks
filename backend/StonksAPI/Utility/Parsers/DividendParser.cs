@@ -7,7 +7,11 @@ namespace StonksAPI.Utility.Parsers
     {
         public Dividends ParseJsonResponse(string jsonString)
         {
-            Dividends dividends = JsonConvert.DeserializeObject<Dividends>(jsonString);
+            Dividends? dividends = JsonConvert.DeserializeObject<Dividends>(jsonString);
+            if(dividends is null)
+            {
+                throw new InvalidOperationException("Failed to parse JSON response.");
+            }
             return dividends;
         }
     }

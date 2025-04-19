@@ -4,6 +4,6 @@ namespace StonksAPI.DTO.Quotation
 {
     public class Quotations : IDeserializable
     {
-        public List<Quotation> QuotationsList { get; set; }
+        public required List<Quotation> QuotationsList { get; set; }
     }
 }

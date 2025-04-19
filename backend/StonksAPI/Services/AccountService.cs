@@ -44,14 +44,14 @@ namespace StonksAPI.Services
         public string GenerateJwt(LoginDto dto)
         {
             // Fetch user from DB using Entity Framework's DbContext
-            User user = _context.Users.FirstOrDefault(u => u.Email == dto.Email);
+            User? user = _context.Users.FirstOrDefault(u => u.Email == dto.Email);
 
             if(user is null)
             {
                 // User is absent in the database
                 throw new BadRequestException("Invalid username or password.");
             }
-            PasswordVerificationResult result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash, dto.Password);
+            PasswordVerificationResult result = _passwordHasher.VerifyHashedPassword(user, user.PasswordHash!, dto.Password);
             if(result == PasswordVerificationResult.Failed)
             {
                 // Password hash verification has failed
@@ -59,11 +59,11 @@ namespace StonksAPI.Services
             }
 
             // Set up the claims
-            List<Claim> claims = new List<Claim>
-            {
+            List<Claim> claims =
+            [
                 new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
                 new Claim(ClaimTypes.Name, user.Username)
-            };
+            ];
 
             // Generate key and signed credentials
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authenticationSettings.JwtKey));

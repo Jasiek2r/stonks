@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("StonksAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+302a05168bf6a44eb94370463ad287445769cd76")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4db983bb4ca31adf4fd596722c1c2e437b08be8d")]
 [assembly: System.Reflection.AssemblyProductAttribute("StonksAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("StonksAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

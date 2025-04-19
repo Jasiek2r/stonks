@@ -6,6 +6,6 @@ namespace StonksAPI.DTO.Dividend
     public class Dividends : IDeserializable
     {
         [JsonProperty("data")]
-        public List<Dividend> DividendList { get; set; }
+        public required List<Dividend> DividendList { get; set; }
     }
 }
