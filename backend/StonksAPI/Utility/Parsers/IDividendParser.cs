@@ -1,10 +1,11 @@
 ﻿using StonksAPI.DTO.Dividend;
 using StonksAPI.DTO.GeneralAssetInformation;
+using StonksAPI.Utility;
 
 namespace StonksAPI.Utility.Parsers
 {
     public interface IDividendParser
     {
-        public Dividends ParseJsonResponse(string jsonString);
+        IDeserializable Parse(string jsonResponse);
     }
 }

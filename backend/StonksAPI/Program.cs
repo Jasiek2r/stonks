@@ -43,12 +43,23 @@ namespace StonksAPI
                 config.SaveToken = true;
                 config.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters()
                 {
-                    ValidIssuer = authenticationSettings.JwtIssuer,
-                    ValidAudience = authenticationSettings.JwtIssuer,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.JwtKey))
+                    ValidIssuer = authenticationSettings.JwtIssuer ?? throw new InvalidOperationException("JWT Issuer not configured"),
+                    ValidAudience = authenticationSettings.JwtIssuer ?? throw new InvalidOperationException("JWT Issuer not configured"),
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(authenticationSettings.JwtKey ?? throw new InvalidOperationException("JWT Key not configured")))
                 };
             });
 
+            // Add CORS services
+            builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowFrontend",
+                    builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000") // React's default port
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
 
             // DI container
             builder.Services.AddScoped<IStonksApiService, StonksApiService>();
@@ -56,11 +67,13 @@ namespace StonksAPI
             builder.Services.AddScoped<IHoldingsService, HoldingsService>();
             builder.Services.AddScoped<IPasswordHasher<User>, PasswordHasher<User>>();
             builder.Services.AddScoped<IValidator<RegisterUserDto>, RegisterUserDtoValidator>();
-            builder.Services.AddScoped<IGeneralInfoParser, GeneralInformationParser>();
+            builder.Services.AddScoped<IGeneralAssetInformationParser, GeneralAssetInformationParser>();
             builder.Services.AddScoped<IQuotationParser, QuotationParser>();
             builder.Services.AddScoped<IDividendParser, DividendParser>();
-            builder.Services.AddScoped<IOverviewParser, OverviewParser>();
+            builder.Services.AddScoped<INewsParser, NewsParser>();
             builder.Services.AddScoped<IParserFacade, ParserFacade>();
+            builder.Services.AddScoped<ICurrencyService, CurrencyService>();
+            builder.Services.AddScoped<ISearchService, SearchService>();
             builder.Services.AddSingleton<UserDbContext>();
             builder.Services.AddSingleton(authenticationSettings);
 
@@ -74,6 +87,9 @@ namespace StonksAPI
             // Configure the HTTP request pipeline.
 
             app.UseHttpsRedirection();
+
+            // Use CORS before authentication
+            app.UseCors("AllowFrontend");
 
             app.UseAuthentication();
 

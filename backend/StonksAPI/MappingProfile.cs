@@ -15,7 +15,7 @@
              */
             CreateMap<ApiSeries, Quotations>()
                 .ForMember(dest => dest.QuotationsList, opt => opt.MapFrom(src =>
-                    src.TimeSeries.Select(ts => new Quotation
+                    (src.TimeSeries ?? new Dictionary<string, Quote>()).Select(ts => new Quotation
                         {
                             TimeInterval = ts.Key,
                             Open = ts.Value.Open,
@@ -24,8 +24,7 @@
                             Close = ts.Value.Close
                         })
                     .ToList()
-                ) 
-            );
+                ));
 
             CreateMap<CompanyOverviewResponse, CompanyOverview>();
 

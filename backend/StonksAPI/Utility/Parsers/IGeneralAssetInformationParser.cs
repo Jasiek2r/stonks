@@ -1,10 +1,9 @@
-﻿using StonksAPI.DTO.Quotation;
 using StonksAPI.Utility;
 
 namespace StonksAPI.Utility.Parsers
 {
-    public interface IQuotationParser
+    public interface IGeneralAssetInformationParser
     {
         IDeserializable Parse(string jsonResponse);
     }
-}
+} 

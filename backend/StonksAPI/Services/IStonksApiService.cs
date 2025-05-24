@@ -1,6 +1,7 @@
 ﻿using StonksAPI.DTO.Dividend;
 using StonksAPI.DTO.GeneralAssetInformation;
 using StonksAPI.DTO.Quotation;
+using StonksAPI.DTO.News;
 using StonksAPI.Utility;
 
 namespace StonksAPI.Services
@@ -16,6 +17,6 @@ namespace StonksAPI.Services
         public Task<Quotations> GetIntradayAssetData(string ticker, string interval);
         public Task<Dividends> GetDividends(string ticker);
         public Task<CompanyOverview> GetCompanyOverview(string ticker);
-
+        public Task<NewsResponse> GetMarketNews(string? tickers = null, string? topics = null);
     }
 }

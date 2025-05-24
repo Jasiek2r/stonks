@@ -12,8 +12,8 @@ using StonksAPI.Entities;
 namespace StonksAPI.Migrations
 {
     [DbContext(typeof(UserDbContext))]
-    [Migration("20241221103807_holdings")]
-    partial class holdings
+    [Migration("20241221103807_Holdings")]
+    partial class Holdings
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

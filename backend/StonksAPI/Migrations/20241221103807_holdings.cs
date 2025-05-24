@@ -5,7 +5,7 @@
 namespace StonksAPI.Migrations
 {
     /// <inheritdoc />
-    public partial class holdings : Migration
+    public partial class Holdings : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

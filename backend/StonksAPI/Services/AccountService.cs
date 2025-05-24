@@ -66,6 +66,10 @@ namespace StonksAPI.Services
             ];
 
             // Generate key and signed credentials
+            if (string.IsNullOrEmpty(_authenticationSettings.JwtKey))
+            {
+                throw new InvalidOperationException("JWT key is not configured");
+            }
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_authenticationSettings.JwtKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var expires = DateTime.Now.AddDays(_authenticationSettings.JwtExpireDays);

@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using StonksAPI.DTO.Currency;
 using StonksAPI.DTO.Dividend;
 using StonksAPI.DTO.GeneralAssetInformation;
 using StonksAPI.DTO.Quotation;
+using StonksAPI.DTO.Search;
 using StonksAPI.Services;
 using StonksAPI.Utility;
 using System.Net;
@@ -29,10 +31,17 @@ namespace StonksAPI.Controllers
     public class StonksApiController : Controller
     {
         private readonly IStonksApiService _stonksApiService;
+        private readonly ICurrencyService _currencyService;
+        private readonly ISearchService _searchService;
 
-        public StonksApiController(IStonksApiService stonksApiService)
+        public StonksApiController(
+            IStonksApiService stonksApiService, 
+            ICurrencyService currencyService,
+            ISearchService searchService)
         {
             _stonksApiService = stonksApiService;
+            _currencyService = currencyService;
+            _searchService = searchService;
         }
 
         [HttpGet]
@@ -94,6 +103,55 @@ namespace StonksAPI.Controllers
             // Fetch company's overview
             CompanyOverview overview = await _stonksApiService.GetCompanyOverview(ticker);
             return Ok(overview);
+        }
+        // WBBBBB
+
+        [HttpGet("tickers")]
+        public async Task<IActionResult> GetAllTickers()
+        {
+            try
+            {
+                // Pobierz wszystkie dostępne spółki
+                var tickers = await _searchService.SearchTickers("");
+                return Ok(tickers);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new { error = ex.Message });
+            }
+        }
+
+        [HttpGet("search")]
+        public async Task<IActionResult> SearchTickers([FromQuery] string query)
+        {
+            if (string.IsNullOrEmpty(query))
+            {
+                return BadRequest("Wprowadź tekst do wyszukiwania");
+            }
+
+            try
+            {
+                var results = await _searchService.SearchTickers(query);
+                return Ok(results);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpPost("currency/calculate")]
+        public async Task<IActionResult> CalculateCurrency([FromBody] CurrencyCalculationRequest request)
+        {
+            try
+            {
+                var result = await _currencyService.CalculateCurrencyConversion(request);
+                return Ok(result);
+            }
+            catch (InvalidOperationException ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 

@@ -1,34 +1,41 @@
-﻿using Newtonsoft.Json;
+﻿using System.Text.Json.Serialization;
 using StonksAPI.Utility;
-using System.Text.Json.Serialization;
 
 namespace StonksAPI.DTO.GeneralAssetInformation
 {
     public class GeneralAssetInformation : IDeserializable
     {
-        [JsonProperty("1. symbol")]
-        public string? Ticker {  get; set; }
+        [JsonPropertyName("bestMatches")]
+        public required List<AssetInformation> BestMatches { get; set; }
+    }
 
-        [JsonProperty("2. name")]
-        public string? Name { get; set; }
-        
-        [JsonProperty("3. type")]
-        public string? Type { get; set; }
-        
-        [JsonProperty("4. region")]
-        public string? Region { get; set; }
-        
-        [JsonProperty("5. marketOpen")]
-        public string? MarketOpen { get; set; }
-        
-        [JsonProperty("6. marketClose")]
-        public string? MarketClose { get; set; }
-        
-        [JsonProperty("7. timezone")]
-        public string? Timezone { get; set; }
+    public class AssetInformation
+    {
+        [JsonPropertyName("1. symbol")]
+        public required string Symbol { get; set; }
 
-        [JsonProperty("8. currency")]
-        public string? Currency { get; set; }
+        [JsonPropertyName("2. name")]
+        public required string Name { get; set; }
 
+        [JsonPropertyName("3. type")]
+        public required string Type { get; set; }
+
+        [JsonPropertyName("4. region")]
+        public required string Region { get; set; }
+
+        [JsonPropertyName("5. marketOpen")]
+        public required string MarketOpen { get; set; }
+
+        [JsonPropertyName("6. marketClose")]
+        public required string MarketClose { get; set; }
+
+        [JsonPropertyName("7. timezone")]
+        public required string Timezone { get; set; }
+
+        [JsonPropertyName("8. currency")]
+        public required string Currency { get; set; }
+
+        [JsonPropertyName("9. matchScore")]
+        public required string MatchScore { get; set; }
     }
 }

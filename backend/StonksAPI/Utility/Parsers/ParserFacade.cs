@@ -1,6 +1,7 @@
 ﻿using StonksAPI.DTO.Dividend;
 using StonksAPI.DTO.GeneralAssetInformation;
 using StonksAPI.DTO.Quotation;
+using StonksAPI.DTO.News;
 
 namespace StonksAPI.Utility.Parsers
 {
@@ -12,49 +13,30 @@ namespace StonksAPI.Utility.Parsers
         // If you want to extend it, make sure they are used under ParseJsonResponse<T>
         // and that every return class implements IDeserializable
         private readonly IQuotationParser _quotationParser;
-        private readonly IGeneralInfoParser _generalInfoParser;
+        private readonly IGeneralAssetInformationParser _generalAssetInformationParser;
         private readonly IDividendParser _dividendParser;
-        private readonly IOverviewParser _overviewParser;
-        public ParserFacade(IDividendParser dividendParser,
-            IGeneralInfoParser generalInfoParser,
+        private readonly INewsParser _newsParser;
+        public ParserFacade(
             IQuotationParser quotationParser,
-            IOverviewParser overviewParser)
+            IGeneralAssetInformationParser generalAssetInformationParser,
+            IDividendParser dividendParser,
+            INewsParser newsParser)
         {
             _quotationParser = quotationParser;
-            _generalInfoParser = generalInfoParser;
+            _generalAssetInformationParser = generalAssetInformationParser;
             _dividendParser = dividendParser;
-            _overviewParser = overviewParser;
+            _newsParser = newsParser;
         }
-        public IDeserializable ParseJsonResponse<T>(string data) where T : IDeserializable {
+        public IDeserializable ParseJsonResponse<T>(string jsonResponse) where T : IDeserializable {
 
-            /*
-             * We go through each type one by one and call an appropriate parser
-             */
-            if(typeof(T) == typeof(Quotations))
+            return typeof(T).Name switch
             {
-                Quotations result = _quotationParser.ParseJsonResponse(data);
-                return result;
-            }
-            else if(typeof(T) == typeof(GeneralAssetInformation))
-            {
-                GeneralAssetInformation result = _generalInfoParser.ParseJsonResponse(data);
-                return result;
-            }
-            else if(typeof(T) == typeof(Dividends))
-            {
-                Dividends result = _dividendParser.ParseJsonResponse(data);
-                return result;
-            }
-            else if(typeof(T) == typeof(CompanyOverviewResponse))
-            {
-                CompanyOverview result = _overviewParser.ParseJsonResponse(data);
-                return result;
-            }
-            else
-            {
-                // If the type is not recognized, throw an exception or handle it accordingly
-                throw new NotSupportedException($"Parsing for type {typeof(T).Name} is not supported.");
-            }
+                nameof(Quotations) => _quotationParser.Parse(jsonResponse),
+                nameof(GeneralAssetInformation) => _generalAssetInformationParser.Parse(jsonResponse),
+                nameof(Dividends) => _dividendParser.Parse(jsonResponse),
+                nameof(NewsResponse) => _newsParser.Parse(jsonResponse),
+                _ => throw new ArgumentException($"Nieznany typ {typeof(T).Name}")
+            };
         } 
     }
 }

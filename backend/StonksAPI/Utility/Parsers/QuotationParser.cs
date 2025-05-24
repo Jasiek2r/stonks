@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Newtonsoft.Json;
 using StonksAPI.DTO.Quotation;
+using StonksAPI.Utility;
 
 namespace StonksAPI.Utility.Parsers
 {
@@ -13,19 +14,18 @@ namespace StonksAPI.Utility.Parsers
             _autoMapper = autoMapper;
         }
 
-        //Helper method for converting raw json string to our Quotations object
-        public Quotations ParseJsonResponse(string jsonString)
+        public IDeserializable Parse(string jsonString)
         {
             //deserialize object
-            ApiResponse? jsonResponse = JsonConvert.DeserializeObject<ApiResponse>(jsonString);
+            ApiResponse? apiResponse = JsonConvert.DeserializeObject<ApiResponse>(jsonString);
 
-            if (jsonResponse == null)
+            if (apiResponse == null)
             {
                 throw new InvalidOperationException("Failed to parse JSON response.");
             }
 
             //convert to uniform internal format
-            ApiResponseAdapter apiResponseAdapter = new ApiResponseAdapter(jsonResponse);
+            ApiResponseAdapter apiResponseAdapter = new ApiResponseAdapter(apiResponse);
             ApiSeries jsonSeries = apiResponseAdapter.ExtractSeries();
 
             //map to Quotations object            
